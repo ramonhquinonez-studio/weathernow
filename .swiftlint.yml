@@ -1,0 +1,33 @@
+excluded:
+  - Carthage
+  - Pods
+  - .build
+  - .swiftpm
+  - DerivedData
+  - fastlane
+  - build
+
+disabled_rules:
+  - trailing_whitespace
+
+opt_in_rules:
+  - empty_count
+  - first_where
+  - sorted_imports
+  - force_unwrapping   # <- deja esta si quieres esa regla
+
+identifier_name:
+  min_length: 2
+  excluded: [id, x, y, i, j, vm]
+
+line_length:
+  warning: 140
+  error: 180
+  ignores_comments: true
+  ignores_urls: true
+
+force_cast: warning
+force_unwrapping:
+  severity: warning
+
+reporter: "xcode"

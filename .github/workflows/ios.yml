@@ -1,0 +1,22 @@
+name: iOS CI
+on:
+  pull_request:
+    branches: [ main ]
+  push:
+    branches: [ main ]
+jobs:
+  build-test:
+    if: ${{ hashFiles('**/*.xcodeproj/**') != '' }}
+    runs-on: macos-14
+    steps:
+      - uses: actions/checkout@v4
+      - name: Select Xcode
+        run: |
+          ls /Applications | grep -i Xcode || true
+          sudo xcode-select -s "/Applications/Xcode_16.0.app" || sudo xcode-select -s "/Applications/Xcode.app"
+      - name: SwiftLint
+        run: brew install swiftlint || true && swiftlint || true
+      - name: Build & Test
+        run: |
+          set -o pipefail
+          xcodebuild -scheme WeatherNow -destination 'platform=iOS Simulator,name=iPhone 15' clean test | xcpretty
