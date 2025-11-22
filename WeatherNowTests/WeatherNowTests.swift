@@ -2,7 +2,7 @@
 //  WeatherNowTests.swift
 //  WeatherNowTests
 //
-//  Created by Humberto Quiñonez on 02/11/25.
+//  Created by Ramón H. Quiñonez on 02/11/25.
 //
 
 import Testing

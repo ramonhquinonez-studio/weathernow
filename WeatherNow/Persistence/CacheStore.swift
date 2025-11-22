@@ -1,3 +1,10 @@
+//
+//  CacheStore.swift
+//  WeatherNow
+//
+//  Created by Ramón H. Quiñonez on 21/11/25.
+//
+
 import Foundation
 
 actor CacheStore<T: Codable> {

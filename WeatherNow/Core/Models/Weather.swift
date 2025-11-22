@@ -1,3 +1,10 @@
+//
+//  Weather.swift
+//  WeatherNow
+//
+//  Created by Ramón H. Quiñonez on 21/11/25.
+//
+
 import Foundation
 
 public struct Weather: Decodable, Identifiable, Equatable {
